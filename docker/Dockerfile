@@ -1,6 +1,9 @@
 FROM ubuntu:18.10
 MAINTAINER Yang Hu <huyang0905@gmail.com>
 
+RUN sed -i 's/archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+RUN sed -i 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
+
 # Install basic dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends pkg-config git python-dev gcc wget vim zip ca-certificates
 
